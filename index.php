@@ -20,7 +20,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>FruityWifi</title>
+<title>BlackBulb</title>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../css/jquery-ui.css" />
@@ -73,27 +73,27 @@ $ss_mode = $_POST["ss_mode"];
 // DELETE LOG
 if ($logfile != "" and $action == "delete") {
     $exec = "$bin_rm ".$mod_logs_history.$logfile.".log";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 // SET MODE
 if ($_POST["change_iface"] == "1") {
     $mod_iface = $ss_iface;
     $exec = "/bin/sed -i 's/mod_iface.*/mod_iface = \\\"".$mod_iface."\\\";/g' _info_.php";
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 }
 
 if ($_POST["change_macaddress"] == "1") {
     $exec = "/bin/sed -i 's/mod_macaddress.*/mod_macaddress = \\\"".$macaddress."\\\";/g' _info_.php";
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 	$mod_macaddress = $macaddress;
 	
     $exec = "/bin/sed -i 's/mod_essid.*/mod_essid = \\\"".$essid."\\\";/g' _info_.php";
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 	$mod_essid = $essid;
 	
 	$exec = "/bin/sed -i 's/mod_mode.*/mod_mode = \\\"".$ss_mode."\\\";/g' _info_.php";
-    $output = exec_fruitywifi($exec);
+    $output = exec_blackbulb($exec);
 	$mod_mode = $ss_mode;
 }
 

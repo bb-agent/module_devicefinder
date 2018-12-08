@@ -249,7 +249,7 @@ process_args(args)
 # Init some values and objects
 pow_mutex = Lock()
 range_power = ( max_power - min_power )
-#power_bar_width = terminal_columns() - 10 - 1 # {ERROR: FruityWifi module does not start, value has been fixed to 180}
+#power_bar_width = terminal_columns() - 10 - 1 # {ERROR: BlackBulb module does not start, value has been fixed to 180}
 power_bar_width = int(power_bar) - 10 - 1
 range_tone = max_tone - min_tone
 
@@ -257,7 +257,7 @@ range_tone = max_tone - min_tone
 logging.basicConfig(level=logging.DEBUG, format="%(message)s", datefmt="")
 #logFormatter = logging.Formatter("%(asctime)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 logFormatter = logging.Formatter("%(message)s", datefmt="")
-logger = logging.getLogger('fruitywifi-devicefinder')
+logger = logging.getLogger('blackbulb-devicefinder')
 fileHandler = logging.FileHandler(log_file)
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)

@@ -45,10 +45,10 @@ if ($service != "") {
 		// COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
 	
 		if ($mod_mode == "1") {
@@ -57,7 +57,7 @@ if ($service != "") {
 			$exec = "$bin_python ik_wifi_device_finder.py -i $mod_iface -e $mod_essid -l $mod_logs -p 90 > /dev/null &";
 		}
 		
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
 		
         $wait = 1;
 	    
@@ -67,15 +67,15 @@ if ($service != "") {
 		exec($exec,$output);
 		
 		$exec = "kill " . $output[0];
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
 		
 		// COPY LOG
         if ( 0 < filesize( $mod_logs ) ) {
             $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
             
             $exec = "$bin_echo '' > $mod_logs";
-            exec_fruitywifi($exec);
+            exec_blackbulb($exec);
         }
     
     }
@@ -84,10 +84,10 @@ if ($service != "") {
 if ($install == "install_$mod_name") {
 
     $exec = "$bin_chmod 755 install.sh";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     header('Location: ../../install.php?module='.$mod_name);
     exit;

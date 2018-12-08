@@ -1,7 +1,7 @@
 module_devicefinder
 ============
 
-FruityWifi DeviceFinder module
+BlackBulb DeviceFinder module
 
 
 <b>DeviceFinder</b> A tool for finding (locating) Wi-Fi emitters.
